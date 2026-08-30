@@ -2,3 +2,6 @@
 
 # Karabiner
 karabiner/.config/karabiner/automatic_backups/
+
+# tmux plugins
+tmux/.config/tmux/plugins
