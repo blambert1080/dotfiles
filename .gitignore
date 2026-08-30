@@ -1,1 +1,4 @@
 .DS_Store
+
+# Karabiner
+karabiner/.config/karabiner/automatic_backups/
