@@ -4,7 +4,7 @@ shell-integration-features = ssh-terminfo,ssh-env
 macos-option-as-alt = true
 clipboard-read = allow
 theme = Nord
-background-opacity = 0.7
+background-opacity = 0.6
 background-blur = macos-glass-regular
 
 background = #000

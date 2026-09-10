@@ -1,0 +1,44 @@
+(defcfg
+  macos-dev-names-include (
+    "Apple Internal Keyboard / Trackpad"
+  )
+)
+
+(defalias 
+  perx (tap-hold 150 150 . (unicode !))
+  comd (tap-hold 150 150 , (unicode -))
+  slun (tap-hold 150 150 / (unicode _))
+  cap  (tap-hold 150 150 esc (multi lctl lalt lsft))
+  si (tap-hold 150 150 i (multi lsft))
+  cs (tap-hold 150 150 s (multi lctl))
+  or (tap-hold 150 150 r (layer-while-held alt-arrow))
+  mt (tap-hold 150 150 t (multi lmet))
+  so (tap-hold 150 150 o (multi rsft))
+  ca (tap-hold 150 150 a (multi rctl))
+  oe (tap-hold 150 150 e (multi ralt))
+  mn (tap-hold 150 150 n (multi rmet))
+)
+
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lalt lmet           spc            rmet ralt
+)
+
+(deflayer isrt
+  grv  1    2    3    4    5    6    7    8      9      0    -    =    bspc
+  tab  y    c    l    m    k    z    f    u      @comd  ;    [    ]    \
+  @cap @si  @cs  @or  @mt  g    p    @mn  @oe    @ca    @so  '    ret
+  lsft q    v    w    d    j    b    h    @slun  @perx  x    rsft
+  lctl lalt lmet           spc            rmet   ralt
+)
+
+(deflayer alt-arrow
+  A-grv  A-1    A-2    A-3  A-4  A-5  A-6  A-7    A-8     A-9  A-0    A--    A-=    A-bspc
+  A-tab  A-y    A-c    A-l  A-m  A-k  A-z  A-f    A-u     A-,  A-;    A-[    A-]    A-\
+  A-esc  A-i    A-s    A-r  A-t  A-g  A-p  left   down    up   right  A-'    A-ret
+  A-lsft A-q    A-v    A-w  A-d  A-j  A-b  A-h    A-/     A-.  A-x    A-rsft
+  A-lctl A-lalt A-lmet           A-spc            A-rmet  A-ralt
+)
