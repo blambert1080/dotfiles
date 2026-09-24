@@ -85,6 +85,8 @@ return {
         "terraformls",
         "ts_ls",
         "yamlls",
+        "marksman",
+        "oxfmt",
         -- "copilot",
       })
     end,

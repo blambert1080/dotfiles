@@ -14,7 +14,31 @@ return {
     },
     config = function()
       require('Comment').setup {
-        pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+        pre_hook = function(ctx)
+          local U = require('Comment.utils')
+
+          local type = ctx.ctype == U.ctype.linewise and '__default' or '__multiline'
+          local location = nil
+          if ctx.ctype == U.ctype.blockwise then
+            location = { ctx.range.srow - 1, ctx.range.scol }
+          elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
+            location = require('ts_context_commentstring.utils').get_visual_start_location()
+          end
+
+          local commentstring = require('ts_context_commentstring').calculate_commentstring {
+            key = type,
+            location = location,
+          }
+          if commentstring then
+            return commentstring
+          end
+
+          if vim.bo.commentstring and vim.bo.commentstring ~= '' then
+            return vim.bo.commentstring
+          end
+
+          return '#%s'
+        end,
       }
     end
   }
