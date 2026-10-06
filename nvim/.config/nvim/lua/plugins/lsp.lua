@@ -60,14 +60,19 @@ return {
         settings = {
           gopls = {
             analyses = {
-              unusedparams = true,     -- Highlight unused parameters
-              shadow = true,           -- Highlight variable shadowing
+              nilness = true,       -- Nil deref / impossible nil checks (noisy on some codebases)
+              unusedwrite = true,   -- Writes to copies that are never read
             },
             staticcheck = true,        -- Enables advanced Go linting rules
             gofumpt = true,            -- Uses gofumpt formatting if desired
-            completeUnimported = true, -- Automatically suggests and imports unimported packages
             usePlaceholders = true,    -- Adds placeholders for function arguments
             semanticTokens = true,
+            codelenses = {
+              tidy = true,             -- "go mod tidy" above go.mod
+              upgrade_dependency = true,
+              run_govulncheck = true,
+            },
+            vulncheck = "Imports",      -- Report known vulnerabilities in dependencies
           },
         },
       })
@@ -85,6 +90,7 @@ return {
         "terraformls",
         "ts_ls",
         "yamlls",
+        "templ",
         "marksman",
         "oxfmt",
         -- "copilot",
