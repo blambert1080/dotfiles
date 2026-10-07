@@ -6,7 +6,6 @@
       "*": "ask",
       "ls *": "allow",
       "grep *": "allow",
-      "echo *": "allow",
       "find *": "allow",
       "git commit *": "deny",
       "git push *": "deny",

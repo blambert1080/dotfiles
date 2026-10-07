@@ -5,3 +5,16 @@ karabiner/.config/karabiner/automatic_backups/
 
 # tmux plugins
 tmux/.config/tmux/plugins
+
+# opencode
+opencode/.config/opencode/node_modules/
+opencode/.config/opencode/service.json
+opencode/.config/opencode/bun.lock
+opencode/.config/opencode/package-lock.json
+opencode/.config/opencode/*.log
+
+# herdr-managed integrations (generated, overwritten on install/update)
+opencode/.config/opencode/herdr-tui-session.js
+opencode/.config/opencode/herdr-opencode/
+opencode/.config/opencode/plugins/herdr-agent-state.js
+opencode/.config/opencode/package.json
