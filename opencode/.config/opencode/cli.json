@@ -1,20 +1,37 @@
 {
   "$schema": "https://opencode.ai/v2/cli.json",
   "theme": {
-    "name": "lucent-orng-blake"
+    "name": "lucent-orng-blake",
+    "mode": "system"
   },
   "keybinds": {
     "session.half.page.up": "ctrl+u",
     "session.half.page.down": "ctrl+d"
   },
   "diffs": {
-    "wrap": "word"
+    "wrap": "word",
+    "view": "auto"
   },
   "session": {
-    "sidebar": "auto",
+    "sidebar": "hide",
     "scrollbar": false,
-    "thinking": "hide"
+    "thinking": "hide",
+    "markdown": "rendered",
+    "verbosity": "medium",
+    "permissions": "prompt"
   },
   "animations": true,
-  "plugins": ["./herdr-opencode"]
+  "plugins": [
+    "./herdr-opencode"
+  ],
+  "tabs": {
+    "layout": "horizontal",
+    "mode": "auto"
+  },
+  "terminal": {
+    "copy": "select"
+  },
+  "attention": {
+    "notifications": false
+  }
 }
